@@ -37,7 +37,7 @@ if api_config.BACKEND_CORS_ORIGINS:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=[
-            str(origin) for origin in api_config.BACKEND_CORS_ORIGINS.split(",")
+            str(origin) for origin in api_config.BACKEND_CORS_ORIGINS
         ],
         allow_credentials=True,
         allow_methods=["*"],
