@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "hrm-backend"
+version = "0.1.0"
+description = "HRM Backend API"
+authors = ["SAHIL1001-SHOUDH <sahilgarg200796@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.133.1"
+django = "^6.0.2"
+uvicorn = "^0.41.0"
+psycopg2-binary = "^2.9.11"
+python-dotenv = "^1.2.1"
+slowapi = "^0.1.9"
+pydantic-settings = "^2.13.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
