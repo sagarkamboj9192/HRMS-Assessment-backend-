@@ -4,7 +4,7 @@ from asgiref.sync import sync_to_async
 from hrm_backend.models.v1.database.employee import Employee
 from hrm_backend.models.v1.schemas.employee import EmployeeCreateResponse
 
-router = APIRouter(tags=["authentication"])
+router = APIRouter(tags=["empolyee_details"])
 
 @router.delete("/delete_employee")
 async def delete_employee(

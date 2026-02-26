@@ -6,7 +6,7 @@ from hrm_backend.models.v1.database.employee import Employee
 from hrm_backend.models.v1.database.employee_attendance import Attendance
 from hrm_backend.models.v1.schemas.employee_attendance import CreateAttendanceRequest,CreateAttendanceResponse
 
-router = APIRouter()
+router = APIRouter(tags=["empolyee_details"])
 
 @router.post("/attendance/create", status_code=status.HTTP_201_CREATED)
 async def create_attendance(
@@ -58,7 +58,8 @@ async def create_attendance(
             status=True,
             message="Attendance created successfully",
             data= {
-                "employee": employee.full_name,
+                "employee_id":employee.id,
+                "employee_name": employee.full_name,
                 "date": attendance.date,
                 "status": attendance.status
             },

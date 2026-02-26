@@ -4,7 +4,7 @@ from asgiref.sync import sync_to_async
 from hrm_backend.models.v1.database.employee import Department
 from hrm_backend.models.v1.schemas.department import GetDepartmentResponse
 
-router = APIRouter()
+router = APIRouter(tags=["empolyee_details"])
 
 @router.get("/departments/dropdown", status_code=status.HTTP_200_OK)
 async def get_departments_dropdown(response: Response):
@@ -22,12 +22,12 @@ async def get_departments_dropdown(response: Response):
                 status_code = 404
             )
 
-        response.status_code = 404
+        response.status_code = 200
         return GetDepartmentResponse(
-            status = False,
-            message = "No departments found",
-            data = {},
-            status_code = 404
+            status = True,
+            message = "Departments fetched successfully.",
+            data = {"departments": departments},
+            status_code = 200
         )
 
     except Exception as e:
@@ -35,6 +35,6 @@ async def get_departments_dropdown(response: Response):
         return {
             "status": False,
             "message": f"Error fetching departments: {str(e)}",
-            "data": [],
+            "data": {},
             "status_code": 400
         }

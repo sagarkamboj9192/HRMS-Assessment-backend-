@@ -9,6 +9,6 @@ class PostgresConfig(BaseSettingsWrapper):
     POSTGRES_USERNAME: Optional[str] = None
     POSTGRES_PASSWORD: Optional[str] = None
     POSTGRES_PORT: Optional[int] = 5432
-    DATABASE_URL: str
+    # DATABASE_URL: str
 
 postgres_config = PostgresConfig()

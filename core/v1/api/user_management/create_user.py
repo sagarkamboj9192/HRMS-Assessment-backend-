@@ -5,7 +5,7 @@ from asgiref.sync import sync_to_async
 from hrm_backend.models.v1.database.employee import Department, Employee
 from hrm_backend.models.v1.schemas.employee import EmployeeCreateRequest,EmployeeCreateResponse
 
-router = APIRouter(tags=["authentication"])
+router = APIRouter(tags=["empolyee_details"])
 
 @router.post("/create_employees")
 async def create_employee( 
@@ -55,7 +55,7 @@ async def create_employee(
             status=True,
             message="Employee created successfully",
             data= {
-                "id": employee.id,
+                "employee_id": employee.id,
                 "full_name": employee.full_name,
                 "email": employee.email,
                 "department": employee.department.name if employee.department else None,

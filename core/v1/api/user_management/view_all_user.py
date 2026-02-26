@@ -4,7 +4,7 @@ from asgiref.sync import sync_to_async
 from hrm_backend.models.v1.database.employee import Employee
 from hrm_backend.models.v1.schemas.employee import EmployeeCreateResponse
 
-router = APIRouter(tags=["authentication"])
+router = APIRouter(tags=["empolyee_details"])
 
 @router.get("/view_all_employees")
 async def get_all_employees(response: Response):
