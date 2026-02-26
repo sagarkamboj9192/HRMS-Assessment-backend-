@@ -3,7 +3,7 @@ import django
 
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hrm_backend.config.v1.settings")
 django.setup()
 
 from fastapi import FastAPI, Request
@@ -12,7 +12,7 @@ from slowapi.errors import RateLimitExceeded
 from starlette.middleware.cors import CORSMiddleware
 
 from hrm_backend.config.v1.api_config import api_config
-from core.fastapi_app import connect_router as connect_router_v1
+from hrm_backend.core.fastapi_app import connect_router as connect_router_v1
 
 from hrm_backend.models.v1.schemas.exception_handler import ExceptionHandlerResponse
 

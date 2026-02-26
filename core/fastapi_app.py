@@ -1,4 +1,4 @@
-from core import connect_router
+from hrm_backend.core import connect_router
 
 from hrm_backend.core.v1.api.user_management.create_user import (
     router as create_user_router_v1
